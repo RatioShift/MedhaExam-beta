@@ -2,116 +2,97 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <title>বিশেষ টিউটোরিয়াল পরীক্ষা — ২০২৬</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পরীক্ষার প্রশ্নপত্র - শ্রেণি: অষ্টম</title>
     <style>
-        @page {
-            size: A4;
-            margin: 10mm 12mm 10mm 12mm;
-            @bottom-right {
-                content: "পৃষ্ঠা " counter(page) " / " counter(pages);
-                font-family: 'SolaimanLipi', 'Kalpurush', 'Siyam Rupali', sans-serif;
-                font-size: 8pt;
-                color: #555;
-            }
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Kalpurush&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
 
         * {
             box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'SolaimanLipi', 'Kalpurush', 'Siyam Rupali', 'FreeSerif', sans-serif;
-            font-size: 9.5pt;
-            line-height: 1.4;
-            color: #111;
             margin: 0;
             padding: 0;
         }
 
-        .exam-header {
-            text-align: center;
-            border-bottom: 1.5pt solid #222;
-            padding-bottom: 4px;
-            margin-bottom: 8px;
+        body {
+            font-family: 'Noto Serif Bengali', 'Kalpurush', serif;
+            background-color: #f4f6f9;
+            color: #111;
+            line-height: 1.6;
+            padding: 20px;
         }
 
-        .school-name {
-            font-size: 14pt;
+        /* অ্যাকশন বার ও প্রিন্ট বাটন */
+        .action-bar {
+            max-width: 800px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-print {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-family: inherit;
             font-weight: bold;
-            margin: 0 0 2px 0;
-            color: #000;
-        }
-
-        .exam-title {
-            font-size: 11pt;
-            font-weight: bold;
-            margin: 0 0 3px 0;
-        }
-
-        .meta-table {
-            width: 100%;
-            margin-top: 2px;
-            font-weight: bold;
-            font-size: 9pt;
-        }
-
-        .meta-table td {
-            padding: 1px 0;
-        }
-
-        .section-header {
-            background-color: #f0f0f0;
-            padding: 2px 6px;
-            font-size: 10pt;
-            font-weight: bold;
-            border-left: 3.5pt solid #333;
-            margin: 8px 0 6px 0;
-            page-break-after: avoid;
-        }
-
-        .question-group {
-            margin-bottom: 8px;
-        }
-
-        .q-title {
-            font-weight: bold;
-            margin-bottom: 3px;
-            page-break-after: avoid;
-        }
-
-        .cq-box {
-            border: 1px solid #ccc;
-            padding: 5px 8px;
-            background-color: #fafafa;
-            margin-bottom: 6px;
             border-radius: 4px;
-            page-break-inside: avoid;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
         }
 
-        .cq-stem {
-            font-style: italic;
-            margin-bottom: 5px;
-            text-align: justify;
+        .btn-print:hover {
+            background-color: #1d4ed8;
         }
 
-        .cq-questions {
-            margin: 0;
-            padding-left: 18px;
+        /* মূল প্রশ্নপত্রের কন্টেইনার */
+        .paper-container {
+            max-width: 800px;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 40px 50px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .cq-questions li {
-            margin-bottom: 2px;
+        /* হেডার ডিজাইন */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #222;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
         }
 
-        .saq-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
+        .header h1 {
+            font-size: 22px;
+            margin-bottom: 4px;
+            font-weight: 700;
         }
 
-        .saq-item {
-            margin-bottom: 3px;
-            page-break-inside: avoid;
+        .header h2 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* সেকশন শিরোনাম */
+        .section-title {
+            background-color: #f1f5f9;
+            padding: 6px 12px;
+            font-size: 15px;
+            font-weight: bold;
+            border-left: 4px solid #2563eb;
+            margin: 20px 0 15px 0;
         }
 
         .marks {
@@ -119,111 +100,326 @@
             font-weight: bold;
         }
 
-        .clear {
-            clear: both;
+        /* প্রশ্ন ব্লক ও উদ্দীপক */
+        .question-block {
+            margin-bottom: 20px;
+        }
+
+        .stem {
+            background-color: #fafafa;
+            border-left: 3px solid #cbd5e1;
+            padding: 10px 14px;
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        .sub-questions {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .sub-questions li {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        /* বহুনির্বাচনি প্রশ্ন লেআউট */
+        .mcq-item {
+            margin-bottom: 14px;
+        }
+
+        .mcq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px 15px;
+            margin: 6px 0 10px 20px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed #ccc;
+            margin: 20px 0;
+        }
+
+        /* প্রিন্ট সেটআপ (PDF তৈরি করার সময় এটি কার্যকর হবে) */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+
+            .action-bar {
+                display: none;
+            }
+
+            .paper-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .section-title {
+                background-color: #eee !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .stem {
+                background-color: #f9f9f9 !important;
+                -webkit-print-color-adjust: exact;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="exam-header">
-        <div class="school-name">চট্টগ্রাম সরকারি উচ্চ বিদ্যালয়, চট্টগ্রাম</div>
-        <div class="exam-title">বিশেষ টিউটোরিয়াল পরীক্ষা — ২০২৬</div>
+    <!-- প্রিন্ট বাটন (পিডিএফ হিসেবে সেভ করার জন্য) -->
+    <div class="action-bar">
+        <button class="btn-print" onclick="window.print()">🖨️ প্রিন্ট</button>
+    </div>
+
+    <div class="paper-container">
         
-        <table class="meta-table">
-            <tr>
-                <td style="text-align: left;">শ্রেণি: অষ্টম | বিষয়: বিজ্ঞান, বাংলাদেশ ও বিশ্বপরিচয় এবং ইসলাম শিক্ষা</td>
-                <td style="text-align: right;">সময়: ১ ঘণ্টা | পূর্ণমান: ৩৫</td>
-            </tr>
-        </table>
-    </div>
-
-    <!-- বিভাগ — ক: বিজ্ঞান -->
-    <div class="section-header">
-        বিভাগ — ক: বিজ্ঞান (অধ্যায় ৭: পৃথিবী ও মহাকর্ষ) <span class="marks">[মান: ১২]</span>
-        <div class="clear"></div>
-    </div>
-
-    <div class="question-group">
-        <div class="q-title">১. সৃজনশীল প্রশ্ন (একটি প্রশ্নের উত্তর দাও): <span class="marks">১০ × ১ = ১০</span></div>
-        <div class="clear"></div>
-        <div class="cq-box">
-            <div class="cq-stem">
-                <strong>উদ্দীপক:</strong> রাজু তার গবেষণাগারে 60 kg ভরের একটি বস্তু নিয়ে পরীক্ষা করছে। সে বস্তুটি নিয়ে ভূপৃষ্ঠের মেরু অঞ্চল থেকে বিষুবীয় অঞ্চলের দিকে গমন করল। পরবর্তীতে বস্তুটি একটি বিশেষ মহাশূন্যযানে করে চাঁদে নিয়ে যাওয়া হলো। পৃথিবী পৃষ্ঠে অভিকর্ষজ ত্বরণের মান 9.8 m/s² এবং চাঁদে অভিকর্ষজ ত্বরণের মান পৃথিবীর প্রায় ১/৬ অংশ।
+        <!-- ==================== হেডার সেকশন (পরিবর্তনযোগ্য) ==================== -->
+        <div class="header">
+            <h1>শ্রেণি: অষ্টম</h1>
+            <h2>বিষয়: বাংলা (প্রথম ও দ্বিতীয় পত্র) এবং তথ্য ও যোগাযোগ প্রযুক্তি (আইসিটি)</h2>
+            <div class="meta-info">
+                <span>পূর্ণমান: ৫০</span>
+                <span>সময়: ১ ঘণ্টা ৩০ মিনিট</span>
             </div>
-            <ol type="ক" class="cq-questions">
-                <li>মহাকর্ষ কাকে বলে? <span class="marks">[১]</span></li>
-                <li>অভিকর্ষজ ত্বরণ বলতে কী বোঝায়? <span class="marks">[২]</span></li>
-                <li>ভূপৃষ্ঠে রাজুর বস্তুর ওজন কত? বিষুবীয় অঞ্চলে বস্তুটির ওজনের কী পরিবর্তন ঘটবে? ব্যাখ্যা করো। <span class="marks">[৩]</span></li>
-                <li>"চাঁদে বস্তুর ভরের পরিবর্তন না হলেও ওজনের পরিবর্তন ঘটে এবং মুক্তভাবে পড়ন্ত লিফটের ন্যায় সেখানে ওজনহীনতা অনুভূত হওয়া সম্ভব"— গাণিতিক বিশ্লেষণসহ মতামত দাও। <span class="marks">[৪]</span></li>
-            </ol>
         </div>
-    </div>
 
-    <div class="question-group">
-        <div class="q-title">২. সংক্ষিপ্ত প্রশ্ন: <span class="marks">২ × ১ = ২</span></div>
-        <ol type="ক" class="saq-list" style="padding-left: 20px;">
-            <li class="saq-item">(ক) পৃথিবীর কেন্দ্রে অভিকর্ষজ ত্বরণ (g)-এর মান কত এবং সেখানে বস্তুর ওজন কত?</li>
-        </ol>
-    </div>
+        <!-- ==================== ক-বিভাগ: বাংলা প্রথম পত্র ==================== -->
+        <div class="section-title">
+            ক-বিভাগ: বাংলা প্রথম পত্র (সুখী মানুষ)
+            <span class="marks">(মান: ১৫)</span>
+        </div>
 
-    <!-- বিভাগ — খ: বাংলাদেশ ও বিশ্বপরিচয় -->
-    <div class="section-header">
-        বিভাগ — খ: বাংলাদেশ ও বিশ্বপরিচয় (অধ্যায় ১২: বাংলাদেশের প্রাকৃতিক সম্পদ) <span class="marks">[মান: ১২]</span>
-        <div class="clear"></div>
-    </div>
-
-    <div class="question-group">
-        <div class="q-title">৩. সৃজনশীল প্রশ্ন (একটি প্রশ্নের উত্তর দাও): <span class="marks">১০ × ১ = ১০</span></div>
-        <div class="clear"></div>
-        <div class="cq-box">
-            <div class="cq-stem">
-                <strong>উদ্দীপক:</strong> রফিক চট্টগ্রামের একটি বিশেষ রপ্তানিমুখী পোশাক শিল্প কারখানায় চাকরি করেন, যেখানে বিপুল সংখ্যক নারী শ্রমিক কর্মরত আছেন। অন্যদিকে, তার বন্ধু সাকিব সিলেটের একটি সার কারখানায় কাজ করেন, যা প্রাকৃতিক গ্যাস কাঁচামাল হিসেবে ব্যবহার করে কৃষি উৎপাদনে প্রত্যক্ষ ভূমিকা রাখছে।
+        <!-- সৃজনশীল প্রশ্ন -->
+        <div class="question-block">
+            <strong>১. উদ্দীপকটি পড়ো এবং নিচের প্রশ্নগুলোর উত্তর দাও:</strong>
+            <div class="stem">
+                জব্বার সাহেব অসৎ উপায়ে এলাকার সাধারণ মানুষের জমি-জমা দখল করে অঢেল সম্পত্তির মালিক হয়েছেন। কিন্তু বর্তমানে তিনি এক দুরারোগ্য ব্যাধিতে আক্রান্ত, কোনো ডাক্তার তাকে সুস্থ করতে পারছে না। মনের মধ্যে নিরন্তর ভয় আর অশান্তির কারণে তিনি রাতে এক মুহূর্তও ঘুমাতে পারেন না। অন্যদিকে, তাঁরই প্রতিবেশী দিনমজুর সালাম সারাদিন কঠোর পরিশ্রম করে যা আয় করে, তা দিয়েই শান্তিতে দিন কাটায়। তার ঘরে কোনো মূল্যবান সম্পত্তি নেই, তাই চোর-ডাকাতেরও কোনো ভয় নেই।
             </div>
-            <ol type="ক" class="cq-questions">
-                <li>বাংলাদেশের 'সাদা সোনা' বলা হয় কোনটিকে? <span class="marks">[১]</span></li>
-                <li>পরিবেশের ভারসাম্য রক্ষায় জীববৈচিত্র্যের প্রয়োজনীয়তা বুঝিয়ে লেখো। <span class="marks">[২]</span></li>
-                <li>রফিকের কর্মসংস্থানভিত্তিক শিল্পটি বাংলাদেশের রপ্তানি আয় ও নারীর ক্ষমতায়নে কীভাবে অবদান রাখছে? ব্যাখ্যা করো। <span class="marks">[৩]</span></li>
-                <li>"সাকিবের কর্মস্থল যে শিল্পখাতকে নির্দেশ করে, তা দেশের কৃষিখাত ও সার্বিক অর্থনীতিকে সমৃদ্ধ করতে অপরিসীম ভূমিকা রাখছে"— উক্তিটি বিশ্লেষণ করো। <span class="marks">[৪]</span></li>
-            </ol>
+
+            <ul class="sub-questions">
+                <li>(ক) 'সুখী মানুষ' নাটিকায় মোড়লের বিশ্বাসী চাকরের নাম কী? <span class="marks">[১]</span></li>
+                <li>(খ) "মনের মধ্যে অশান্তি থাকলে ওষুধে কাজ হয় না"— উক্তিটি বুঝিয়ে লেখো। <span class="marks">[২]</span></li>
+                <li>(গ) উদ্দীপকের জব্বার সাহেবের পরিণতিতে 'সুখী মানুষ' নাটিকার কোন দিকটি ফুটে উঠেছে? ব্যাখ্যা করো। <span class="marks">[৩]</span></li>
+                <li>(ঘ) "সালামের জীবনের মানসিক প্রশান্তিই 'সুখী মানুষ' নাটিকার মূল বক্তব্যকে নির্দেশ করে"— উদ্দীপক ও নাটিকার আলোকে উক্তিটির যথার্থতা মূল্যায়ন করো। <span class="marks">[৪]</span></li>
+            </ul>
         </div>
-    </div>
 
-    <div class="question-group">
-        <div class="q-title">৪. সংক্ষিপ্ত প্রশ্ন: <span class="marks">২ × ১ = ২</span></div>
-        <ol type="ক" class="saq-list" style="padding-left: 20px;">
-            <li class="saq-item">(ক) বাংলাদেশে মোট ভূ-ভাগের কত ভাগ বনভূমি রয়েছে এবং প্রাকৃতিক ভারসাম্য রক্ষায় কত ভাগ থাকা প্রয়োজন?</li>
-            <li class="saq-item">(খ) প্রথম প্রাকৃতিক গ্যাসভিত্তিক সার কারখানা কোথায় এবং কত সালে প্রতিষ্ঠিত হয়?</li>
-        </ol>
-    </div>
-
-    <!-- বিভাগ — গ: ইসলাম ও নৈতিক শিক্ষা -->
-    <div class="section-header">
-        বিভাগ — গ: ইসলাম ও নৈতিক শিক্ষা (নির্দিষ্ট পাঠসমূহ) <span class="marks">[মান: ১১]</span>
-        <div class="clear"></div>
-    </div>
-
-    <div class="question-group">
-        <div class="q-title">৫. সৃজনশীল প্রশ্ন (একটি প্রশ্নের উত্তর দাও): <span class="marks">১০ × ১ = ১০</span></div>
-        <div class="clear"></div>
-        <div class="cq-box">
-            <div class="cq-stem">
-                <strong>উদ্দীপক:</strong> তানভীর প্রতিদিন নিয়ম মেনে দেখে দেখে (নাযিরা) সুমধুর স্বরে কুরআন তিলাওয়াত করে। সে প্রতিদিন ফরজ সালাতের পর আয়াতুল কুরসি পাঠ করে। অন্যদিকে, তার বন্ধু সিয়াম কিয়ামতের জবাবদিহিতার কথা স্মরণ না করে ইচ্ছামতো চলে। তানভীর তাকে বোঝায় যে, কিয়ামতের দিন অণু পরিমাণ ভালো ও মন্দ কাজের আমলনামা প্রদর্শন করা হবে এবং আল্লাহর সমস্ত নিয়ামতের শুকরিয়া আদায় করা উচিত।
+        <strong>বহুনির্বাচনি প্রশ্ন:</strong>
+        
+        <div class="mcq-item">
+            <p><strong>২. 'সুখী মানুষ' নাটিকার দৃশ্য সংখ্যা কতটি?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) ২টি</div>
+                <div>(খ) ৩টি</div>
+                <div>(গ) ৪টি</div>
+                <div>(ঘ) ৫টি</div>
             </div>
-            <ol type="ক" class="cq-questions">
-                <li>সূরা আল-কাদর আল-কুরআনের কততম সূরা? <span class="marks">[১]</span></li>
-                <li>"নাযিরা তিলাওয়াত" বলতে কী বোঝায়? <span class="marks">[২]</span></li>
-                <li>সিয়ামকে সচেতন করতে তানভীরের কথায় 'সূরা আল-যিলযাল' ও 'সূরা কুরাইশ'-এর যে শিক্ষা ফুটে উঠেছে, তা আলোচনা করো। <span class="marks">[৩]</span></li>
-                <li>"আদর্শ জীবন গঠন ও আখিরাতের নাজাত লাভে আল-কুরআনের শিক্ষার ভূমিকা অপরিসীম"— তানভীরের জীবনযাত্রার আলোকে তা বিশ্লেষণ করো। <span class="marks">[৪]</span></li>
-            </ol>
         </div>
-    </div>
 
-    <div class="question-group">
-        <div class="q-title">৬. সংক্ষিপ্ত প্রশ্ন: <span class="marks">১ × ১ = ১</span></div>
-        <ol type="ক" class="saq-list" style="padding-left: 20px;">
-            <li class="saq-item">(ক) আয়াতুল কুরসি পবিত্র কুরআনের কোন সূরার কত নম্বর আয়াত এবং এর একটি বিশেষ ফজিলত লেখো।</li>
-        </ol>
+        <div class="mcq-item">
+            <p><strong>৩. কবিরাজের মতে মোড়লের রোগ ভালো হওয়ার উপায় কী ছিল?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) হিমালয় থেকে ওষুধ আনা</div>
+                <div>(খ) বাঘের চোখ সংগ্রহ করা</div>
+                <div>(গ) সুখী মানুষের জামা পরা</div>
+                <div>(ঘ) অলৌকিক জল পড়া খাওয়া</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>৪. 'সুখী মানুষ' নাটিকায় হাসুর বয়স কত?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) ২০ বছর</div>
+                <div>(খ) ৪৫ বছর</div>
+                <div>(গ) ৫০ বছর</div>
+                <div>(ঘ) ৬০ বছর</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>৫. নাটিকায় কাঠুরের চোরের ভয় না থাকার মূল কারণ কী?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) সে সাহসী বলে</div>
+                <div>(খ) তার কোনো সম্পদ নেই বলে</div>
+                <div>(গ) গ্রামে কোনো চোর নেই বলে</div>
+                <div>(ঘ) সে পুলিশে খবর দিয়েছে বলে</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>৬. "লোভে পাপ, পাপে মৃত্যু"— উক্তিটি কার?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) হাসুর</div>
+                <div>(খ) রহমতের</div>
+                <div>(গ) কবিরাজের</div>
+                <div>(ঘ) কাঠুরের</div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ==================== খ-বিভাগ: বাংলা দ্বিতীয় পত্র ==================== -->
+        <div class="section-title">
+            খ-বিভাগ: বাংলা দ্বিতীয় পত্র (পার্ট ৫.১ ও ৫.২)
+            <span class="marks">(মান: ১৫)</span>
+        </div>
+
+        <div class="question-block">
+            <strong>৭. নিচের প্রশ্নগুলোর উত্তর দাও:</strong>
+            <ul class="sub-questions" style="margin-top: 8px;">
+                <li>
+                    <strong>(ক) শব্দ গঠন ও পদের পরিবর্তন (পার্ট ৫.১):</strong>
+                    <ol style="margin-left: 20px; margin-top: 5px;">
+                        <li>'গঠনগত দিক' এবং 'অর্থগত দিক' থেকে শব্দকে কয় ভাগে ভাগ করা যায় ও কী কী? <span class="marks">[২]</span></li>
+                        <li>নিচের মূল শব্দগুলোর সাধিত বা পরিবর্তিত রূপ লেখো: <i>মন, ইচ্ছা, পাহাড়</i>। <span class="marks">[৩]</span></li>
+                    </ol>
+                </li>
+                <li style="margin-top: 10px;">
+                    <strong>(খ) পদ পরিচয় ও প্রকারভেদ (পার্ট ৫.২):</strong>
+                    <ol style="margin-left: 20px; margin-top: 5px;">
+                        <li>পদ কাকে বলে? পদ প্রধানত কয় প্রকার ও কী কী? <span class="marks">[২]</span></li>
+                        <li>নিচের বাক্যগুলো থেকে চিহ্নিত পদগুলোর ব্যাকরণিক শ্রেণি বা প্রকারভেদ চিহ্নিত করো: <span class="marks">[৩]</span>
+                            <br>&bull; তিনি <b>খুব</b> দ্রুত হাঁটেন।
+                            <br>&bull; <b>রহিম</b> ও <b>করিম</b> দুই ভাই।
+                            <br>&bull; আমরা <b>বাংলাদেশের</b> নাগরিক।
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+        <strong>বহুনির্বাচনি প্রশ্ন:</strong>
+
+        <div class="mcq-item">
+            <p><strong>৮. সাধিত শব্দ সাধারণত কত প্রকার?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) ২ প্রকার</div>
+                <div>(খ) ৩ প্রকার</div>
+                <div>(গ) ৪ প্রকার</div>
+                <div>(ঘ) ৫ প্রকার</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>৯. धातুর পর কোন প্রত্যয় যুক্ত হয়ে কৃদন্ত শব্দ গঠিত হয়?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) তদ্ধিত প্রত্যয়</div>
+                <div>(খ) কৃৎ প্রত্যয়</div>
+                <div>(গ) বিভক্তি</div>
+                <div>(ঘ) উপসর্গ</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>১০. বাক্যে ব্যবহৃত বিভক্তিযুক্ত শব্দকে কী বলা হয়?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) পদ</div>
+                <div>(খ) ধাতু</div>
+                <div>(গ) উপসর্গ</div>
+                <div>(ঘ) অনুসর্গ</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>১১. 'নীল যে পদ্ম = নীলপদ্ম' — এটি কোন নিয়মে গঠিত শব্দ?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) সন্ধি</div>
+                <div>(খ) সমাস</div>
+                <div>(গ) প্রত্যয়</div>
+                <div>(ঘ) উপসর্গ</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>১২. নিচের কোনটি সর্বনাম পদের উদাহরণ?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) ঢাকা</div>
+                <div>(খ) ধীরে</div>
+                <div>(গ) তিনি</div>
+                <div>(ঘ) এবং</div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ==================== গ-বিভাগ: আইসিটি ==================== -->
+        <div class="section-title">
+            গ-বিভাগ: তথ্য ও যোগাযোগ প্রযুক্তি (আইসিটি)
+            <span class="marks">(মান: ২০)</span>
+        </div>
+
+        <div class="question-block">
+            <strong>১৩. উদ্দীপকটি পড়ো এবং প্রশ্নগুলোর উত্তর দাও:</strong>
+            <div class="stem">
+                অষ্টম শ্রেণির শিক্ষার্থী সুমি ইন্টারনেট ব্যবহার করে তার পরীক্ষার ফলাফল ডাউনলোড করল এবং ই-মেইলের মাধ্যমে তার অভিভাবককে পাঠাল। কিছুদিন পর তার কম্পিউটারে ইন্টারনেট ব্যবহার করার সময় হঠাৎ কিছু অচেনা ফাইল তৈরি হতে শুরু করে এবং কম্পিউটারটি ধীরগতির হয়ে পড়ে। সুমির শিক্ষক তাকে জানালেন, কম্পিউটার সুরক্ষা না থাকায় এ সমস্যা হয়েছে।
+            </div>
+
+            <ul class="sub-questions">
+                <li>(ক) মালওয়্যার (Malware) কাকে বলে? <span class="marks">[১]</span></li>
+                <li>(খ) পাসওয়ার্ড শক্তিশালী করার দুটি উপায় ব্যাখ্যা করো। <span class="marks">[২]</span></li>
+                <li>(গ) সুমির কম্পিউটারে সৃষ্ট সমস্যাটি কিসের কারণে হয়েছে? তা প্রতিরোধে কী ব্যবস্থা নেওয়া উচিত ছিল? <span class="marks">[৩]</span></li>
+                <li>(ঘ) তথ্য ও যোগাযোগ প্রযুক্তির দৈনন্দিন ব্যবহারে সুমির মতো সাধারণ ব্যবহারকারীদের জন্য 'সাইবার নিরাপত্তা' এবং 'সঠিক আইসিটি ব্যবহারের নিয়মকানুন' মেনে চলার গুরুত্ব আলোচনা করো। <span class="marks">[৯]</span></li>
+            </ul>
+        </div>
+
+        <strong>বহুনির্বাচনি প্রশ্ন:</strong>
+
+        <div class="mcq-item">
+            <p><strong>১৪. কম্পিউটারের ক্ষতিকারক সফটওয়্যারকে সাধারণত কী বলা হয়?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) অ্যান্টিভাইরাস</div>
+                <div>(খ) মালওয়্যার</div>
+                <div>(গ) ফায়ারওয়াল</div>
+                <div>(ঘ) ব্রাউজার</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>১৫. শক্তিশালী পাসওয়ার্ড তৈরির জন্য নিচের কোনটি ব্যবহার করা উচিত?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) কেবল নিজের জন্মতারিখ</div>
+                <div>(খ) কেবল নিজের নাম</div>
+                <div>(গ) বড় হাত-ছোট হাতের অক্ষর, সংখ্যা ও প্রতীক</div>
+                <div>(ঘ) পর পর সাজানো সংখ্যা (যেমন: ১২৩৪৫৬)</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>১৬. কম্পিউটার ভাইরাস প্রথম নামকরণ করেন কে?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) ফ্রাঙ্ক কোহেন</div>
+                <div>(খ) চার্লস ব্যাবেজ</div>
+                <div>(গ) জন ভন নিউম্যান</div>
+                <div>(ঘ) অ্যালান টিউরিং</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>১৭. ইন্টারনেট ব্যবহার করে কারোর অ্যাকাউন্টে অবৈধভাবে প্রবেশ করাকে কী বলা হয়?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) ব্রাউজিং</div>
+                <div>(খ) হ্যাকিং</div>
+                <div>(গ) ডাউনলোড</div>
+                <div>(ঘ) আপলোড</div>
+            </div>
+        </div>
+
+        <div class="mcq-item">
+            <p><strong>১৮. সাইবার অপরাধ প্রতিরোধের জন্য ব্যবহৃত নিরাপত্তামূলক দেয়াল বা ব্যবস্থা কোনটি?</strong> <span class="marks">[১]</span></p>
+            <div class="mcq-grid">
+                <div>(ক) ফায়ারওয়াল</div>
+                <div>(খ) কুকিজ</div>
+                <div>(গ) স্প্যাম</div>
+                <div>(ঘ) রাউটার</div>
+            </div>
+        </div>
+
     </div>
 
 </body>
