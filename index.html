@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>পরীক্ষার প্রশ্নপত্র - শ্রেণি: অষ্টম</title>
+
+    <!-- MathJax Library for Rendering Mathematical Equations -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kalpurush&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
 
@@ -85,63 +100,83 @@
             margin-top: 8px;
         }
 
-        /* সেকশন শিরোনাম */
-        .section-title {
-            background-color: #f1f5f9;
+        /* সাবজেক্ট ও সেকশন শিরোনাম */
+        .subject-title {
+            background-color: #2b3a4a;
+            color: #ffffff;
             padding: 6px 12px;
             font-size: 15px;
             font-weight: bold;
-            border-left: 4px solid #2563eb;
-            margin: 20px 0 15px 0;
+            border-radius: 4px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: inline-block;
         }
 
-        .marks {
-            float: right;
-            font-weight: bold;
-        }
-
-        /* প্রশ্ন ব্লক ও উদ্দীপক */
-        .question-block {
-            margin-bottom: 20px;
+        /* প্রশ্ন কার্ড ও উদ্দীপক */
+        .question-card {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 4px solid #3182ce;
+            background-color: #f8fafc;
+            border-radius: 0 6px 6px 0;
         }
 
         .stem {
-            background-color: #fafafa;
-            border-left: 3px solid #cbd5e1;
-            padding: 10px 14px;
-            margin: 10px 0;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+            border-radius: 4px;
             text-align: justify;
         }
 
         .sub-questions {
             list-style: none;
-            padding-left: 5px;
+            padding-left: 0;
+            margin: 0;
         }
 
         .sub-questions li {
-            margin-bottom: 8px;
-            text-align: justify;
+            margin-bottom: 10px;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
         }
 
-        /* বহুনির্বাচনি প্রশ্ন লেআউট */
-        .mcq-item {
-            margin-bottom: 14px;
+        .q-text {
+            flex-grow: 1;
+            padding-right: 15px;
         }
 
-        .mcq-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px 15px;
-            margin: 6px 0 10px 20px;
+        .q-marks {
+            font-weight: bold;
+            min-width: 30px;
+            text-align: right;
+            color: #2d3748;
         }
 
-        hr {
-            border: none;
-            border-top: 1px dashed #ccc;
-            margin: 20px 0;
+        /* টেবিল স্টাইল */
+        .stem-table {
+            width: 100%;
+            margin: 12px 0;
+            border-collapse: collapse;
+            text-align: left;
         }
 
-        /* প্রিন্ট সেটআপ (PDF তৈরি করার সময় এটি কার্যকর হবে) */
+        .stem-table th, .stem-table td {
+            border: 1px solid #cbd5e0;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+        .stem-table th {
+            background-color: #edf2f7;
+            font-weight: bold;
+        }
+
+        /* প্রিন্ট সেটআপ */
         @media print {
             body {
                 background-color: #fff;
@@ -158,13 +193,15 @@
                 max-width: 100%;
             }
 
-            .section-title {
-                background-color: #eee !important;
+            .subject-title {
+                background-color: #2b3a4a !important;
+                color: #ffffff !important;
                 -webkit-print-color-adjust: exact;
             }
 
-            .stem {
-                background-color: #f9f9f9 !important;
+            .question-card {
+                background-color: #f8fafc !important;
+                border-left: 4px solid #3182ce !important;
                 -webkit-print-color-adjust: exact;
             }
         }
@@ -182,181 +219,86 @@
         <!-- ==================== হেডার সেকশন ==================== -->
         <div class="header">
             <h1>শ্রেণি: অষ্টম</h1>
-            <h2>বিষয়: বাংলা (প্রথম ও দ্বিতীয় পত্র) এবং তথ্য ও যোগাযোগ প্রযুক্তি (আইসিটি)</h2>
+            <h2>বিষয়: গণিত ও বিজ্ঞান</h2>
             <div class="meta-info">
-                <span>পূর্ণমান: ৪০</span>
-                <span>সময়: ১ ঘণ্টা ৩০ মিনিট</span>
+                <span>পূর্ণমান: ২০</span>
+                <span>সময়: ৪০ মিনিট</span>
             </div>
         </div>
-        <!-- ভাগ-ক: বাংলা ১ম পত্র (আনন্দ পাঠ) -->
-        <section>
-          <h2>ভাগ-ক: বাংলা ১ম পত্র (আনন্দ পাঠ)</h2>
-          
-          <p><strong>নিচের প্রশ্নগুলোর উত্তর দাও:</strong></p>
-          
-          <p><strong>১. সংক্ষিপ্ত উত্তর প্রশ্ন:</strong></p>
-          <p>'মুক্তি' গল্পে কুন্টার গ্রামের নাম কী এবং শ্বেতাঙ্গ খদ্দেরদের কাছে তার মূল্য বেশি ছিল কেন? সংক্ষেপে লেখো।</p>
-          
-          <p><strong>২. রচনামূলক প্রশ্ন:</strong></p>
-          <p>'মুক্তি' গল্পের কুন্টার জীবনসংগ্রাম এবং পরাধীনতার শৃঙ্খল ভেঙে মুক্তির আকুল আকাঙ্ক্ষা বর্ণনা করো।</p>
-        </section>
-    
+
+        <!-- গণিত সেকশন -->
+        <div class="subject-title">ক-বিভাগ: গণিত (অধ্যায়: ৬.১ ও ৬.২)</div>
         
-        <!-- ভাগ-খ: বাংলা ২য় পত্র -->
-        <section>
-          <h2>ভাগ-খ: বাংলা ২য় পত্র</h2>
-          <p><strong>সঠিক উত্তরটি খাতায় লেখো:</strong></p>
-          
-          <ol>
-            <li>যে বাক্যে একটিমাত্র সমাপিকা ক্রিয়া থাকে, তাকে কী বাক্য বলে?
-              <ul>
-                <li>(ক) সরল বাক্য</li>
-                <li>(খ) জটিল বাক্য</li>
-                <li>(গ) যৌগিক বাক্য</li>
-                <li>(ঘ) মিশ্র বাক্য</li>
-              </ul>
-            </li>
-            <li>"আমি খেলায় প্রথম হয়েছি, তাই সবাই আমাকে শুভকামনা জানিয়েছে।"— এটি কোন ধরনের বাক্য?
-              <ul>
-                <li>(ক) সরল বাক্য</li>
-                <li>(খ) জটিল বাক্য</li>
-                <li>(গ) যৌগিক বাক্য</li>
-                <li>(ঘ) খণ্ড বাক্য</li>
-              </ul>
-            </li>
-            <li>যেসব বাক্যে একটি প্রধান খণ্ড বাক্যের আশ্রয়ে এক বা একাধিক অপ্রধান খণ্ড বাক্য থাকে, তাকে কী বলে?
-              <ul>
-                <li>(ক) সরল বাক্য</li>
-                <li>(খ) যৌগিক বাক্য</li>
-                <li>(গ) জটিল বাক্য</li>
-                <li>(ঘ) মৌলিক বাক্য</li>
-              </ul>
-            </li>
-            <li>"মেঘ গর্জন করলে ময়ূর নৃত্য করে।"— বাক্যটিকে জটিল বাক্যে রূপান্তর করলে কী হবে?
-              <ul>
-                <li>(ক) মেঘ গর্জন করে এবং ময়ূর নৃত্য করে।</li>
-                <li>(খ) যখন মেঘ গর্জন করে, তখন ময়ূর নৃত্য করে।</li>
-                <li>(গ) মেঘের গর্জনে ময়ূর নৃত্য শুরু করে।</li>
-                <li>(ঘ) ময়ূর নৃত্য করে কারণ মেঘ গর্জন করছে।</li>
-              </ul>
-            </li>
-            <li>যৌগিক বাক্যে দুটি খণ্ড বাক্যকে যুক্ত করতে নিচের কোনটি ব্যবহৃত হয়?
-              <ul>
-                <li>(ক) অনুসর্গ</li>
-                <li>(খ) অব্যয় পদ</li>
-                <li>(গ) সর্বনাম পদ</li>
-                <li>(ঘ) বিশেষ্য পদ</li>
-              </ul>
-            </li>
-            <li>"তুমি আসবে বলে আমি অপেক্ষা করে আছি।"— বাক্যটি গঠন অনুযায়ী কোন শ্রেণীর?
-              <ul>
-                <li>(ক) সরল বাক্য</li>
-                <li>(খ) জটিল বাক্য</li>
-                <li>(গ) যৌগিক বাক্য</li>
-                <li>(ঘ) বহুপদী বাক্য</li>
-              </ul>
-            </li>
-            <li>"সত্য কথা না বলে বিপদে পড়েছি।"— এটি একটি—
-              <ul>
-                <li>(ক) সরল বাক্য</li>
-                <li>(খ) জটিল বাক্য</li>
-                <li>(গ) যৌগিক বাক্য</li>
-                <li>(ঘ) কোনোটিই নয়</li>
-              </ul>
-            </li>
-            <li>জটিল বাক্যকে যৌগিক বাক্যে রূপান্তর করার সময় কোন বিষয়টির ওপর জোর দেওয়া হয়?
-              <ul>
-                <li>(ক) আশয়-আশ্রিত বাক্য দুটিকে দুটি স্বাধীন বাক্যে পরিণত করে অব্যয় দিয়ে যুক্ত করা</li>
-                <li>(খ) বাক্যটিকে সংক্ষিপ্ত করে একটি সমাপিকা ক্রিয়ায় আনা</li>
-                <li>(গ) বাক্যের অর্থ সম্পূর্ণ পরিবর্তন করে ফেলা</li>
-                <li>(ঘ) কোনো অব্যয় ব্যবহার না করা</li>
-              </ul>
-            </li>
-            <li>"পরিশ্রম করো, নয়তো ব্যর্থ হবে।"— এটি কোন ধরনের বাক্য?
-              <ul>
-                <li>(ক) সরল</li>
-                <li>(খ) মিশ্র</li>
-                <li>(গ) যৌগিক</li>
-                <li>(ঘ) অধীন</li>
-              </ul>
-            </li>
-            <li>গঠনভেদে বাংলা বাক্যকে কয়ভাগে ভাগ করা যায়?
-              <ul>
-                <li>(ক) দুই ভাগে</li>
-                <li>(খ) তিন ভাগে</li>
-                <li>(গ) চার ভাগে</li>
-                <li>(ঘ) পাঁচ ভাগে</li>
-              </ul>
-            </li>
-          </ol>
-        </section>
+        <div class="question-card">
+            <div class="stem">
+                <strong>১. উদ্দীপক:</strong> একটি দুই অঙ্কবিশিষ্ট সংখ্যার অঙ্কদ্বয়ের সমষ্টি ১২। সংখ্যাটির অঙ্কদ্বয় স্থান বিনিময় করলে যে নতুন সংখ্যা তৈরি হয়, তা প্রদত্ত সংখ্যাটি হতে ১৮ কম। আবার, সংখ্যাটির অঙ্কদ্বয়কে দুই চলক $x$ ও $y$ ($x > y$) ধরে গঠিত সরল সহসমীকরণদ্বয় হলো: $\frac{x}{a} + \frac{y}{b} = \frac{2}{a} + \frac{1}{b}$ এবং $\frac{x}{b} - \frac{y}{a} = \frac{2}{b} - \frac{1}{a}$।
+            </div>
+            <ul class="sub-questions">
+                <li>
+                    <span class="q-text"><strong>ক.</strong> $(3, -2)$ বিন্দুটি $3x + 5y = -10$ সরলরেখার উপর অবস্থিত কি না যাচাই করো।</span>
+                    <span class="q-marks">১</span>
+                </li>
+                <li>
+                    <span class="q-text"><strong>খ.</strong> উদ্দীপকে উল্লিখিত চলকদ্বয় ($x$ ও $y$) সম্বলিত সহসমীকরণজোটটি অপনয়ন পদ্ধতিতে সমাধান করো।</span>
+                    <span class="q-marks">২</span>
+                </li>
+                <li>
+                    <span class="q-text"><strong>গ.</strong> উদ্দীপকের প্রথম শর্তানুসারে গঠিত সহসমীকরণ তৈরি করে সংখ্যাটি নির্ণয় করো।</span>
+                    <span class="q-marks">৩</span>
+                </li>
+                <li>
+                    <span class="q-text"><strong>ঘ.</strong> নির্ণীত $x$ ও $y$-এর মানকে বিন্দুর স্থানাঙ্ক $(x, y)$ ধরে ছক কাগজে বিন্দুটি স্থাপন করো এবং বিন্দুটির চতুর্ভাগীয় অবস্থান ও অক্ষদ্বয় হতে দূরত্ব ব্যাখ্যা করো।</span>
+                    <span class="q-marks">৪</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- বিজ্ঞান সেকশন -->
+        <div class="subject-title">খ-বিভাগ: বিজ্ঞান (দ্বাদশ অধ্যায়: মহাবিশ্ব ও আমাদের বাসভূমি)</div>
         
-        <!-- ভাগ-গ: English -->
-        <section>
-          <h2>ভাগ-গ: English</h2>
-          
-          <p><strong>Read the passage carefully and answer the following questions:</strong></p>
-          <blockquote>
-            Thousands of years ago, the first pearl was probably discovered while human beings were searching for food at the sea shore. Throughout history, the pearl with its shine has been one of the most highly valued gems. Pearls have been mentioned many times in religious texts and mythologies from the earliest times. The ancient Egyptians valued pearls so much that they were buried with them. It is said that the famous queen of Egypt, Cleopatra would dissolve a pearl in a glass and drink it as a sign of love and respect for the entire nation. The Greeks thought of pearls as a sign of wealth and social position. In ancient Rome, pearls were considered the greatest sign of wealth and social status. The brave knights used to wear them in the battles for good luck.
-          </blockquote>
-        
-          <p><strong>1. Choose the correct answer from the alternatives:</strong></p>
-          <ol type="a">
-            <li>The ancient Egyptians were buried with pearls because they —
-              <ul>
-                <li>(i) wanted to show off</li>
-                <li>(ii) valued pearls very highly</li>
-                <li>(iii) used pearls as weapons</li>
-                <li>(iv) hated gold</li>
-              </ul>
-            </li>
-            <li>What does the word 'dissolve' mean in the passage?
-              <ul>
-                <li>(i) melt / liquefy</li>
-                <li>(ii) freeze</li>
-                <li>(iii) break</li>
-                <li>(iv) hide</li>
-              </ul>
-            </li>
-            <li>The brave knights wore pearls in the battles —
-              <ul>
-                <li>(i) to look handsome</li>
-                <li>(ii) for good luck</li>
-                <li>(iii) to frighten enemies</li>
-                <li>(iv) to trade</li>
-              </ul>
-            </li>
-            <li>Who associated pearls with love and marriage?
-              <ul>
-                <li>(i) The Romans</li>
-                <li>(ii) The Greeks</li>
-                <li>(iii) The Egyptians</li>
-                <li>(iv) The Indians</li>
-              </ul>
-            </li>
-          </ol>
-        
-          <p><strong>2. Answer the following questions in short:</strong></p>
-          <ol type="a">
-            <li>How was the first pearl probably discovered?</li>
-            <li>Why did Queen Cleopatra dissolve a pearl and drink it?</li>
-            <li>What did pearls symbolize in ancient Rome and Greece?</li>
-          </ol>
-        </section>
-        
-        <!-- ভাগ-ঘ: বাংলাদেশ ও বিশ্বপরিচয় -->
-        <section>
-          <h2>ভাগ-ঘ: বাংলাদেশ ও বিশ্বপরিচয়</h2>
-          
-          <p><strong>১. নিচের উদ্দীপকটি পড়ো এবং প্রশ্নগুলোর উত্তর দাও:</strong></p>
-          <p>উপকূলীয় অঞ্চলের বাসিন্দা রফিক সাহেব লক্ষ করছেন, বিগত কয়েক বছর ধরে অনাবৃষ্টি ও অতিবৃষ্টির মতো বৈরী আবহাওয়া দেখা দিচ্ছে। নদীতে লোনা পানির পরিমাণ বৃদ্ধি পাওয়ায় কৃষি জমি ক্ষতিগ্রস্ত হচ্ছে এবং প্রায়ই সিডর ও আইলার মতো ঘূর্ণিঝড় তাদের জীবনযাত্রাকে বিপর্যস্ত করে তুলছে। পরিবেশ বিজ্ঞানীরা বলছেন, বৈশ্বিক উষ্ণায়নের কারণেই আজ এ ধরনের দুর্যোগের পরিমাণ বৃদ্ধি পাচ্ছে।</p>
-          
-          <ol type="ka">
-            <li>'সিডিএমপি' (CDMP)-এর পূর্ণরূপ কী?</li>
-            <li>গ্রিনহাউস প্রতিক্রিয়া বা বৈশ্বিক উষ্ণায়ন বলতে কী বোঝায়?</li>
-            <li>উদ্দীপকে উল্লেখিত দুর্যোগসমূহ মোকাবিলায় দুর্যোগ-পূর্ববর্তী সময়ে স্থানীয় বাসিন্দাদের কী ধরনের প্রস্তুতি গ্রহণ করা উচিত? ব্যাখ্যা করো।</li>
-            <li>"জলবায়ু পরিবর্তনের ক্ষতিকর প্রভাব মোকাবিলায় বাংলাদেশে টেকসই অভিযোজন কৌশল গ্রহণ করা অত্যন্ত জরুরি"— উদ্দীপক ও তোমার পাঠ্যবইয়ের আলোকে বিশ্লেষণ করো।</li>
-          </ol>
-        </section>
+        <div class="question-card">
+            <div class="stem">
+                <strong>২. উদ্দীপক:</strong> নিচের ছকটি লক্ষ করো:
+                <table class="stem-table">
+                    <thead>
+                        <tr>
+                            <th>মহাজাগতিক বস্তু/সংগঠন</th>
+                            <th>বৈশিষ্ট্য/সংগঠন কাঠামো</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>A</strong></td>
+                            <td>মহাবিশ্বের কেন্দ্রমুখী বল ও ঘূর্ণনের ফলে গ্যাস ও ধূলিকণার বিশাল সৃষ্টি, যেখানে কোটি কোটি নক্ষত্র পুঞ্জীভূত থাকে।</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B</strong></td>
+                            <td>একটি মধ্যম আকারের উত্তপ্ত প্রজ্জ্বলিত গ্যাসপিণ্ড, যা সৌরজগতের কেন্দ্রে অবস্থিত এবং শক্তি বিকিরণ করে।</td>
+                        </tr>
+                    </tbody>
+                </table>
+                অয়ন বিজ্ঞানের ক্লাসে শিখল কীভাবে মহাবিশ্বের উৎপত্তি সংক্রান্ত বিগ ব্যাং তত্ত্ব ব্যাখ্যা করা হয় এবং পৃথিবী কীভাবে তার নিজ অক্ষে ঘূর্ণন ও সূর্যের চারপাশে আবর্তনের মাধ্যমে দিন-রাত ও ঋতু পরিবর্তন ঘটায়।
+            </div>
+            <ul class="sub-questions">
+                <li>
+                    <span class="q-text"><strong>ক.</strong> আলোকবর্ষ (Light Year) কাকে বলে?</span>
+                    <span class="q-marks">১</span>
+                </li>
+                <li>
+                    <span class="q-text"><strong>খ.</strong> সূর্যকে কেন্দ্র করে পৃথিবীর বার্ষিক গতির কারণে কীভাবে ঋতু পরিবর্তন ঘটে? সংক্ষেপে ব্যাখ্যা করো।</span>
+                    <span class="q-marks">২</span>
+                </li>
+                <li>
+                    <span class="q-text"><strong>গ.</strong> উদ্দীপকে বর্ণিত 'A' ও 'B' এর মধ্যে গাঠনিক ও কার্যকরী সম্পর্ক আলোচনা করো।</span>
+                    <span class="q-marks">৩</span>
+                </li>
+                <li>
+                    <span class="q-text"><strong>ঘ.</strong> মহাবিশ্বের সম্প্রসারণ ও এর উৎপত্তি ব্যাখ্যায় "বিগ ব্যাং (Big Bang)" তত্ত্বের গ্রহণযোগ্যতা যুক্তি সহকারে বিশ্লেষণ করো।</span>
+                    <span class="q-marks">৪</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </body>
 </html>
