@@ -73,35 +73,25 @@
         }
 
         /* হেডার ডিজাইন */
-        .header {
+        .exam-header {
             text-align: center;
             border-bottom: 2px solid #222;
             padding-bottom: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .header h1 {
-            font-size: 22px;
-            margin-bottom: 4px;
+        .exam-header h2 {
+            font-size: 20px;
+            margin-bottom: 6px;
             font-weight: 700;
         }
 
-        .header h2 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .meta-info {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
+        .exam-header p {
             font-size: 14px;
-            margin-top: 8px;
         }
 
         /* সাবজেক্ট ও সেকশন শিরোনাম */
-        .subject-title {
+        .question-section h3 {
             background-color: #2b3a4a;
             color: #ffffff;
             padding: 6px 12px;
@@ -114,66 +104,25 @@
         }
 
         /* প্রশ্ন কার্ড ও উদ্দীপক */
-        .question-card {
-            margin-bottom: 25px;
+        .question-section {
+            margin-bottom: 20px;
             padding: 15px;
             border-left: 4px solid #3182ce;
             background-color: #f8fafc;
             border-radius: 0 6px 6px 0;
         }
 
-        .stem {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            padding: 12px 16px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            text-align: justify;
+        .question-section p {
+            margin-bottom: 8px;
         }
 
-        .sub-questions {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
+        .question-section ul, .question-section ol {
+            padding-left: 20px;
+            margin-top: 8px;
         }
 
-        .sub-questions li {
-            margin-bottom: 10px;
-            font-size: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
-        .q-text {
-            flex-grow: 1;
-            padding-right: 15px;
-        }
-
-        .q-marks {
-            font-weight: bold;
-            min-width: 30px;
-            text-align: right;
-            color: #2d3748;
-        }
-
-        /* টেবিল স্টাইল */
-        .stem-table {
-            width: 100%;
-            margin: 12px 0;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        .stem-table th, .stem-table td {
-            border: 1px solid #cbd5e0;
-            padding: 8px 12px;
-            font-size: 14px;
-        }
-
-        .stem-table th {
-            background-color: #edf2f7;
-            font-weight: bold;
+        .question-section li {
+            margin-bottom: 6px;
         }
 
         /* প্রিন্ট সেটআপ */
@@ -193,13 +142,13 @@
                 max-width: 100%;
             }
 
-            .subject-title {
+            .question-section h3 {
                 background-color: #2b3a4a !important;
                 color: #ffffff !important;
                 -webkit-print-color-adjust: exact;
             }
 
-            .question-card {
+            .question-section {
                 background-color: #f8fafc !important;
                 border-left: 4px solid #3182ce !important;
                 -webkit-print-color-adjust: exact;
@@ -211,167 +160,88 @@
 
     <!-- প্রিন্ট বাটন -->
     <div class="action-bar">
-        <button class="btn-print" onclick="window.print()">🖨️ প্রিন্ট</button>
+        <button class="btn-print" onclick="window.print()">🖨️ প্রিন্ট করুন</button>
     </div>
 
     <div class="paper-container">
         
-        <!-- ==================== হেডার সেকশন ==================== -->
-
-        <section class="question-paper">
-        <!-- পরীক্ষার নাম ও সাধারণ নির্দেশনাবলী -->
-        <div class="header" style="text-align: center; font-family: sans-serif; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px;">
-            <h2>সাপ্তাহিক মূল্যায়ন পরীক্ষা - ২০২৬</h2>
-            <h3>বিষয়: বাংলাদেশ ও বিশ্ব পরিচয়, ICT এবং গণিত</h3>
-            <p><strong>সময়:</strong> ১ ঘণ্টা ৩০ মিনিট | <strong>পূর্ণমান:</strong> ৪৫ (১ মার্ক = ২ মিনিট)</p>
-        </div>
-
-        <!-- ১. বাংলাদেশ ও বিশ্ব পরিচয় (সৃজনশীল প্রশ্ন) -> ১০ মার্ক -->
-        <div class="subject-section" style="margin-bottom: 25px;">
-            <h3 style="background-color: #f2f2f2; padding: 8px;">ক-বিভাগ: বাংলাদেশ ও বিশ্ব পরিচয় (অধ্যায় ১০) [মান: ১০]</h3>
-            <div class="stem" style="margin-bottom: 10px;">
-            <p><strong>উদ্দীপক:</strong></p>
-            <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: center;">
-                <thead>
-                <tr style="background-color: #e6e6e6;">
-                    <th>ক্রমিক নং</th>
-                    <th>দেশ</th>
-                    <th>প্রতি বর্গ কি.মি. জনসংখ্যা</th>
-                    <th>মাথাপিছু আয় (মার্কিন ডলারে)</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>১</td>
-                    <td>যুক্তরাষ্ট্র</td>
-                    <td>৩৬</td>
-                    <td>৮১,৬৯৫</td>
-                </tr>
-                <tr>
-                    <td>২</td>
-                    <td>ভারত</td>
-                    <td>৪৭৩</td>
-                    <td>২,৪৮৪</td>
-                </tr>
-                <tr>
-                    <td>৩</td>
-                    <td>বাংলাদেশ</td>
-                    <td>১১৭১</td>
-                    <td>২,৭৮৪</td>
-                </tr>
-                </tbody>
-            </table>
+        <!-- ==================== মূল প্রশ্নপত্র ==================== -->
+        <section class="exam-paper-container">
+            <div class="exam-header" style="text-align: center; margin-bottom: 20px;">
+                <h2>সমন্বিত মাসিক পরীক্ষা - ২০২৬</h2>
+                <p><strong>শ্রেণি:</strong> অষ্টম | <strong>পূর্ণমান:</strong> ৪০ | <strong>সময়:</strong> ১ ঘণ্টা ৩০ মিনিট</p>
             </div>
-            
-            <div class="creative-questions">
-            <p><strong>ক.</strong> প্রতি বছর কোন তারিখে বাংলাদেশে জাতীয় জনসংখ্যা দিবস পালন করা হয়? <span style="float: right;">১</span></p>
-            <p><strong>খ.</strong> 'জনসংখ্যানীতি' বলতে কী বোঝায়? ব্যাখ্যা করো। <span style="float: right;">২</span></p>
-            <p><strong>গ.</strong> উদ্দীপকের তালিকা অনুসারে বাংলাদেশের উন্নয়নের পথে প্রধান বাধা কোনটি? বর্ণনা করো। <span style="float: right;">৩</span></p>
-            <p><strong>ঘ.</strong> ছকে বর্ণিত ২ নম্বর দেশের অভিজ্ঞতার আলোকে কীভাবে বাংলাদেশ জনসম্পদে সমৃদ্ধ হতে পারবে বলে তুমি মনে করো? তোমার মতামত দাও। <span style="float: right;">৪</span></p>
-            </div>
-        </div>
 
-<!-- ICT Section -->
-<section class="exam-section">
-    <h3>বিষয়: তথ্য ও যোগাযোগ প্রযুক্তি (অধ্যায় ৫: শিক্ষা ও দৈনন্দিন জীবনে ইন্টারনেট)</h3>
-    
-    <div class="question-block">
-        <p class="question-title"><strong>ক) বহুনির্বাচনি প্রশ্ন (MCQ):</strong></p>
-        <ol class="mcq-list">
-            <li>
-                নেটওয়ার্কে একটি কম্পিউটারের অবস্থান বা ঠিকানা সনাক্তকরণের মাধ্যমকে কী বলা হয়? <span class="marks">[১]</span>
-                <ol type="ক" class="options-list">
-                    <li>IP Address</li>
-                    <li>URL</li>
-                    <li>HTTP</li>
-                    <li>Domain Name</li>
-                </ol>
-            </li>
-            <li>
-                ইন্টারনেটে তথ্য খোঁজার জন্য ব্যবহৃত ইঞ্জিন কোনটি? <span class="marks">[১]</span>
-                <ol type="ক" class="options-list">
-                    <li>ওয়েব ব্রাউজার</li>
-                    <li>সার্চ ইঞ্জিন</li>
-                    <li>ই-মেইল ಕ್ಲায়েন্ট</li>
-                    <li>ওয়েব সার্ভার</li>
-                </ol>
-            </li>
-            <li>
-                কোনটি ব্যবহার করে অতি দ্রুত ও স্বল্প খরচে বার্তা পাঠানো যায়? <span class="marks">[১]</span>
-                <ol type="ক" class="options-list">
-                    <li>ফ্যাক্স</li>
-                    <li>ডাকসেবা</li>
-                    <li>ই-মেইল</li>
-                    <li>টেলিগ্রাম</li>
-                </ol>
-            </li>
-            <li>
-                অনলাইন ভিত্তিক শিক্ষা ব্যবস্থার গুরুত্বপূর্ণ একটি মাধ্যম কোনটি? <span class="marks">[১]</span>
-                <ol type="ক" class="options-list">
-                    <li>ই-গভর্নেন্স</li>
-                    <li>ই-লার্নিং</li>
-                    <li>ই-কমার্স</li>
-                    <li>ই-সেবা</li>
-                </ol>
-            </li>
-        </ol>
-    </div>
-    
-    <div class="question-block">
-        <p class="question-title"><strong>খ) সংক্ষিপ্ত প্রশ্ন:</strong></p>
-        <ol class="short-questions">
-            <li>ই-লার্নিং (e-Learning) কী? শিক্ষা ক্ষেত্রে এর দুটি সুবিধা লেখো। <span class="marks">[২]</span></li>
-            <li>সার্চ ইঞ্জিন (Search Engine) বলতে কী বোঝায়? দুটি জনপ্রিয় সার্চ ইঞ্জিনের নাম লেখো। <span class="marks">[২]</span></li>
-            <li>ই-মেইল ব্যবহারের দুটি প্রধান সুবিধা উল্লেখ করো। <span class="marks">[২]</span></li>
-        </ol>
-    </div>
-</section>
-         <!-- বিজ্ঞান সেকশন -->
-        <div class="subject-title">খ-বিভাগ: বিজ্ঞান (দ্বাদশ অধ্যায়: মহাবিশ্ব ও আমাদের বাসভূমি)</div>
-        
-        <div class="question-card">
-            <div class="stem">
-                <strong>২. উদ্দীপক:</strong> নিচের ছকটি লক্ষ করো:
-                <table class="stem-table">
-                    <thead>
-                        <tr>
-                            <th>মহাজাগতিক বস্তু/সংগঠন</th>
-                            <th>বৈশিষ্ট্য/সংগঠন কাঠামো</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>A</strong></td>
-                            <td>মহাবিশ্বের কেন্দ্রমুখী বল ও ঘূর্ণনের ফলে গ্যাস ও ধূলিকণার বিশাল সৃষ্টি, যেখানে কোটি কোটি নক্ষত্র পুঞ্জীভূত থাকে।</td>
-                        </tr>
-                        <tr>
-                            <td><strong>B</strong></td>
-                            <td>একটি মধ্যম আকারের উত্তপ্ত প্রজ্জ্বলিত গ্যাসপিণ্ড, যা সৌরজগতের কেন্দ্রে অবস্থিত এবং শক্তি বিকিরণ করে।</td>
-                        </tr>
-                    </tbody>
-                </table>
-                অয়ন বিজ্ঞানের ক্লাসে শিখল কীভাবে মহাবিশ্বের উৎপত্তি সংক্রান্ত বিগ ব্যাং তত্ত্ব ব্যাখ্যা করা হয় এবং পৃথিবী কীভাবে তার নিজ অক্ষে ঘূর্ণন ও সূর্যের চারপাশে আবর্তনের মাধ্যমে দিন-রাত ও ঋতু পরিবর্তন ঘটায়।
+            <!-- Math Section -->
+            <div class="question-section" style="margin-bottom: 20px;">
+                <h3>১. গণিত (অধ্যায় ৬.১ ও ৬.২: সরল সহসমীকরণ) - মান: ১০</h3>
+                <p><strong>সৃজনশীল প্রশ্ন:</strong></p>
+                <p>দুটি সংখ্যার যোগফল ৫০ এবং তাদের পার্থক্যের তিনগুণ বড় সংখ্যাটি অপেক্ষা ১০ বেশি। অন্য একটি শর্তে, দুটি সংখ্যার সমীকরণ গঠন করে প্রতিস্থাপন ও অপনয়ন পদ্ধতিতে সমাধান করা যায়।</p>
+                <ul>
+                    <li>ক) সরল সহসমীকরণ কাকে বলে? উদাহরণ দাও। <strong>[২]</strong></li>
+                    <li>খ) উদ্দীপকের প্রথম শর্তানুসারে সংখ্যা দুটি নির্ণয় করো। <strong>[৪]</strong></li>
+                    <li>গ) সংখ্যা দুটির সাথে যথাক্রমে ৪ ও ২ যোগ করলে নতুন সংখ্যা দুটির অনুপাত ২:১ হয়—অপনয়ন পদ্ধতির সাহায্যে তা যাচাই করো। <strong>[৪]</strong></li>
+                </ul>
             </div>
-            <ul class="sub-questions">
-                <li>
-                    <span class="q-text"><strong>ক.</strong> আলোকবর্ষ (Light Year) কাকে বলে?</span>
-                    <span class="q-marks">১</span>
-                </li>
-                <li>
-                    <span class="q-text"><strong>খ.</strong> সূর্যকে কেন্দ্র করে পৃথিবীর বার্ষিক গতির কারণে কীভাবে ঋতু পরিবর্তন ঘটে? সংক্ষেপে ব্যাখ্যা করো।</span>
-                    <span class="q-marks">২</span>
-                </li>
-                <li>
-                    <span class="q-text"><strong>গ.</strong> উদ্দীপকে বর্ণিত 'A' ও 'B' এর মধ্যে গাঠনিক ও কার্যকরী সম্পর্ক আলোচনা করো।</span>
-                    <span class="q-marks">৩</span>
-                </li>
-                <li>
-                    <span class="q-text"><strong>ঘ.</strong> মহাবিশ্বের সম্প্রসারণ ও এর উৎপত্তি ব্যাখ্যায় "বিগ ব্যাং (Big Bang)" তত্ত্বের গ্রহণযোগ্যতা যুক্তি সহকারে বিশ্লেষণ করো।</span>
-                    <span class="q-marks">৪</span>
-                </li>
-            </ul>
-        </div>
-        
+
+            <!-- English 2nd Section -->
+            <div class="question-section" style="margin-bottom: 20px;">
+                <h3>২. English Second Paper (Right Form of Verbs) - মান: ৫</h3>
+                <p><strong>Fill in the blanks with the correct form of the verbs given in the brackets: [1 × 5 = 5]</strong></p>
+                <p>
+                    Most of the students of our country are expert in (a) — (memorise) answers. They do not prepare notes by themselves. They get them (b) — (prepare) by their tutors. Their tutors exercise their brains for the students. So, the thinking power of the students does not (c) — (develop). They (d) — (acquire) any command of the language. They, of course, can do well in the examination. But for this, they can claim no credit of their own. This result doesn't (e) — (help) them in their later future.
+                </p>
+            </div>
+
+            <!-- Bangla 1st Section -->
+            <div class="question-section" style="margin-bottom: 20px;">
+                <h3>৩. বাংলা ১ম পত্র (কবিতা: আবার আসিব ফিরে - জীবনানন্দ দাশ) - মান: ১০</h3>
+                <p><strong>সৃজনশীল প্রশ্ন:</strong></p>
+                <p>প্রবাসীর মনে বারবার ভেসে ওঠে চেনা বাংলার রূপ। হাজার মাইল দূরে থেকেও সে অনুভব করে ধানসিঁড়ি নদীর বাঁক, কার্তিকের নবান্নের খেত, আর ভোরের কুয়াশায় মিশে থাকা শঙ্খচিল বা শালিকের রূপ। সে বিশ্বাস করে, মৃত্যুর পরেও তার আত্মা এই বাংলার সবুজ প্রকৃতি ও রূপময় নিসর্গের মাঝেই বারবার ফিরে আসবে।</p>
+                <ul>
+                    <li>ক) ‘আবার আসিব ফিরে’ কবিতাটি কোন কাব্যগ্রন্থ থেকে সংগৃহীত হয়েছে? <strong>[১]</strong></li>
+                    <li>খ) “আবার আসিব আমি বাংলার নদী মাঠ খেত ভালোবেসে”—চরণটি দ্বারা কবির কোন ভাব প্রকাশ পেয়েছে? ব্যাখ্যা করো। <strong>[২]</strong></li>
+                    <li>গ) উদ্দীপকের প্রবাসীর মনোভাবে ‘আবার আসিব ফিরে’ কবিতার যে দিকটি প্রতিফলিত হয়েছে, তা ব্যাখ্যা করো। <strong>[৩]</strong></li>
+                    <li>ঘ) “জন্মভূমির প্রতি গভীর মমত্ববোধ ও প্রকৃতিপ্রীতিই এই কবিতার মূল সুর”—উদ্দীপক ও কবিতার আলোকে মূল্যায়ন করো। <strong>[৪]</strong></li>
+                </ul>
+            </div>
+
+            <!-- Bangla 2nd Section -->
+            <div class="question-section" style="margin-bottom: 20px;">
+                <h3>৪. বাংলা ২য় পত্র (পাঠ ৭.১ ও ৭.২) - মান: ৫</h3>
+                <p><strong>বহুনির্বাচনি প্রশ্ন (সঠিক উত্তর নির্বাচন করো): [১ × ৫ = ৫]</strong></p>
+                <ol>
+                    <li>বাক্যের কতটি গুণ বা বৈশিষ্ট্য থাকা আবশ্যক?<br>
+                        ক) ১টি খ) ২টি গ) ৩টি ঘ) ৪টি
+                    </li>
+                    <li>অর্থসংগতির দিক থেকে বাক্যের অন্তর্গত পদগুলোর মধ্যে মিলবন্ধনকে কী বলে?<br>
+                        ক) আকাঙ্ক্ষা খ) আসত্তি গ) যোগ্যতা ঘ) পদক্রম
+                    </li>
+                    <li>একটি পদের পর অন্য পদ শোনার যে ইচ্ছা তাকে কী বলে?<br>
+                        ক) আকাঙ্ক্ষা খ) আসত্তি গ) যোগ্যতা ঘ) কারক
+                    </li>
+                    <li>বাক্যের অর্থ পরিষ্কার করার জন্য সুশৃঙ্খল পদবিন্যাসকে কী বলে?<br>
+                        ক) আকাঙ্ক্ষা খ) আসত্তি গ) যোগ্যতা ঘ) সমাস
+                    </li>
+                    <li>গঠন অনুসারে বাক্য কয় প্রকার?<br>
+                        ক) দুই প্রকার খ) তিন প্রকার গ) চার প্রকার ঘ) পাঁচ প্রকার
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Islam Education Section -->
+            <div class="question-section" style="margin-bottom: 20px;">
+                <h3>৫. ইসলাম শিক্ষা (চতুর্থ অধ্যায়: আখলাক) - মান: ১০</h3>
+                <p><strong>সৃজনশীল প্রশ্ন:</strong></p>
+                <p>জনাব রায়হান একটি প্রতিষ্ঠানে উচ্চ পদে চাকরি করেন। তিনি সবসময় নিজেকে অন্যদের চেয়ে শ্রেষ্ঠ মনে করেন এবং অধস্তন কর্মচারীদের তুচ্ছতাচ্ছিল্য করেন। অন্যদিকে, তার দপ্তরে ফাইল অনুমোদনের জন্য লোকজন এলে তিনি নিয়মের বাইরে অতিরিক্ত গোপন পারিতোষিক বা উৎকোচ দাবি করেন। তার এই আচার-আচরণ সমাজে চরম অসন্তোষ ও বিশৃঙ্খলার সৃষ্টি করছে।</p>
+                <ul>
+                    <li>ক) আখলাক শব্দের অর্থ কী? <strong>[১]</strong></li>
+                    <li>খ) অহংকার কেন জান্নাতে প্রবেশের অন্তরায়? ব্যাখ্যা করো। <strong>[২]</strong></li>
+                    <li>গ) উদ্দীপকে জনাব রায়হানের আচরণের মাধ্যমে আখলাকে যামিমাহর কোন দিকগুলো প্রকাশ পেয়েছে? ব্যাখ্যা করো। <strong>[৩]</strong></li>
+                    <li>ঘ) “আখলাকে যামিমাহ মানুষের ইহকাল ও পরকাল উভয়কেই ধ্বংস করে দেয়”—উদ্দীপকের আলোকে মূল্যায়ন করো। <strong>[৪]</strong></li>
+                </ul>
+            </div>
+        </section>
 
     </div>
 </body>
