@@ -1,248 +1,125 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>পরীক্ষার প্রশ্নপত্র - শ্রেণি: অষ্টম</title>
-
-    <!-- MathJax Library for Rendering Mathematical Equations -->
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            },
-            svg: {
-                fontCache: 'global'
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kalpurush&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Noto Serif Bengali', 'Kalpurush', serif;
-            background-color: #f4f6f9;
-            color: #111;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        /* অ্যাকশন বার ও প্রিন্ট বাটন */
-        .action-bar {
-            max-width: 800px;
-            margin: 0 auto 15px auto;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .btn-print {
-            background-color: #2563eb;
-            color: #ffffff;
-            border: none;
-            padding: 6px 14px;
-            font-size: 13px;
-            font-family: inherit;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: background-color 0.2s;
-        }
-
-        .btn-print:hover {
-            background-color: #1d4ed8;
-        }
-
-        /* মূল প্রশ্নপত্রের কন্টেইনার */
-        .paper-container {
-            max-width: 800px;
-            background: #ffffff;
-            margin: 0 auto;
-            padding: 40px 50px;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        /* হেডার ডিজাইন */
-        .exam-header {
-            text-align: center;
-            border-bottom: 2px solid #222;
-            padding-bottom: 12px;
-            margin-bottom: 25px;
-        }
-
-        .exam-header h2 {
-            font-size: 20px;
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-
-        .exam-header p {
-            font-size: 14px;
-        }
-
-        /* সাবজেক্ট ও সেকশন শিরোনাম */
-        .question-section h3 {
-            background-color: #2b3a4a;
-            color: #ffffff;
-            padding: 6px 12px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        /* প্রশ্ন কার্ড ও উদ্দীপক */
-        .question-section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-left: 4px solid #3182ce;
-            background-color: #f8fafc;
-            border-radius: 0 6px 6px 0;
-        }
-
-        .question-section p {
-            margin-bottom: 8px;
-        }
-
-        .question-section ul, .question-section ol {
-            padding-left: 20px;
-            margin-top: 8px;
-        }
-
-        .question-section li {
-            margin-bottom: 6px;
-        }
-
-        /* প্রিন্ট সেটআপ */
-        @media print {
-            body {
-                background-color: #fff;
-                padding: 0;
-            }
-
-            .action-bar {
-                display: none;
-            }
-
-            .paper-container {
-                box-shadow: none;
-                padding: 0;
-                max-width: 100%;
-            }
-
-            .question-section h3 {
-                background-color: #2b3a4a !important;
-                color: #ffffff !important;
-                -webkit-print-color-adjust: exact;
-            }
-
-            .question-section {
-                background-color: #f8fafc !important;
-                border-left: 4px solid #3182ce !important;
-                -webkit-print-color-adjust: exact;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Second Paper - Model Test - Class VIII</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
+:root{--bg:#f4f6f9;--card:#fff;--ink:#111;--muted:#555;--accent:#2b3a4a;--blue:#3182ce;--soft:#f8fafc;--line:#cbd5e1}
+@media (prefers-color-scheme:dark){:root{--bg:#161b22;--card:#1f2630;--ink:#e8edf3;--muted:#9aa7b6;--accent:#3b4f66;--blue:#63b3ed;--soft:#252e3a;--line:#3a4656}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Serif Bengali',Georgia,serif;background:var(--bg);color:var(--ink);line-height:1.65;padding:16px}
+.bar{max-width:820px;margin:0 auto 12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.timer{font-weight:700;font-size:15px;color:var(--blue)}
+.btn{background:#2563eb;color:#fff;border:0;padding:7px 14px;border-radius:4px;font:700 13px inherit;font-family:inherit;cursor:pointer;margin-left:6px}
+.paper{max-width:820px;margin:0 auto;background:var(--card);padding:34px 44px;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.head{text-align:center;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px}
+.head h1{font-size:20px}.head h2{font-size:16px;margin:2px 0}.head p{font-size:14px}
+.info{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:14px;margin-bottom:12px}
+.info span{border-bottom:1px dotted var(--muted);min-width:150px;display:inline-block}
+.sum{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px}
+.sum td,.sum th{border:1px solid var(--line);padding:4px 8px;text-align:center}.sum th{background:var(--accent);color:#fff}
+.nb{font-size:13px;font-style:italic;color:var(--muted);margin-bottom:14px}
+.part{background:var(--accent);color:#fff;padding:6px 12px;border-radius:4px;font-weight:700;font-size:15px;margin:18px 0 10px;display:flex;justify-content:space-between}
+.q{background:var(--soft);border-left:4px solid var(--blue);border-radius:0 6px 6px 0;padding:12px 16px;margin-bottom:14px;font-family:'Noto Serif Bengali',Georgia,serif}
+.q h3{font-size:15px;display:flex;justify-content:space-between;gap:10px;margin-bottom:6px}
+.q p{margin-bottom:6px}
+.box{border:1px solid var(--line);border-collapse:collapse;margin:6px 0 10px;width:100%;text-align:center}
+.box td,.box th{border:1px solid var(--line);padding:5px 8px;font-size:14px}
+.box th{background:var(--card)}
+.hint{font-size:14px;margin:4px 0 4px 18px}
+u{text-decoration:underline}
+@media(max-width:600px){.paper{padding:20px 16px}}
+@media print{body{background:#fff;padding:0;color:#000}.bar{display:none}.paper{box-shadow:none;padding:0;max-width:100%}
+.part,.sum th{background:#2b3a4a!important;color:#fff!important;-webkit-print-color-adjust:exact}.q{break-inside:avoid}}
+</style>
 </head>
 <body>
+<div class="bar">
+  <div class="timer" id="timer">⏱ 02:00:00</div>
+  <div><button class="btn" id="tbtn" onclick="toggle()">▶ শুরু করুন</button><button class="btn" onclick="window.print()">🖨️ প্রিন্ট</button></div>
+</div>
 
-    <!-- প্রিন্ট বাটন -->
-    <div class="action-bar">
-        <button class="btn-print" onclick="window.print()">🖨️ প্রিন্ট করুন</button>
-    </div>
+<div class="paper">
+  <div class="head">
+    <h1>মডেল টেস্ট – বার্ষিক পরীক্ষা ২০২৬</h1>
+    <h2>ENGLISH SECOND PAPER</h2>
+    <p><strong>Class:</strong> VIII &nbsp;|&nbsp; <strong>Time:</strong> 2 Hours &nbsp;|&nbsp; <strong>Full Marks:</strong> 50</p>
+  </div>
+  <div class="info">
+    <div>নাম: <span>Atif</span></div><div>রোল: <span></span></div><div>তারিখ: <span></span></div>
+  </div>
+  <table class="sum">
+    <tr><th>Part</th><th>Q.1</th><th>Q.2</th><th>Q.3</th><th>Q.4</th><th>Q.5</th><th>Q.6</th><th>Q.7</th><th>Q.8</th><th>Total</th></tr>
+    <tr><td>Marks</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>5</td><td>8</td><td>12</td><td>50</td></tr>
+  </table>
+  <p class="nb">[N.B. The figures in the right margin indicate full marks. Answer all the questions.]</p>
 
-    <div class="paper-container">
-        
-        <!-- ==================== মূল প্রশ্নপত্র ==================== -->
-        <section class="exam-paper-container">
-            <div class="exam-header" style="text-align: center; margin-bottom: 20px;">
-                <h2>সমন্বিত মাসিক পরীক্ষা - ২০২৬</h2>
-                <p><strong>শ্রেণি:</strong> অষ্টম | <strong>পূর্ণমান:</strong> ৪০ | <strong>সময়:</strong> ১ ঘণ্টা ৩০ মিনিট</p>
-            </div>
+  <div class="part"><span>Part-A : Grammar</span><span>[Marks : 30]</span></div>
 
-            <!-- Math Section -->
-            <div class="question-section" style="margin-bottom: 20px;">
-                <h3>১. গণিত (অধ্যায় ৬.১ ও ৬.২: সরল সহসমীকরণ) - মান: ১০</h3>
-                <p><strong>সৃজনশীল প্রশ্ন:</strong></p>
-                <p>দুটি সংখ্যার যোগফল ৫০ এবং তাদের পার্থক্যের তিনগুণ বড় সংখ্যাটি অপেক্ষা ১০ বেশি। অন্য একটি শর্তে, দুটি সংখ্যার সমীকরণ গঠন করে প্রতিস্থাপন ও অপনয়ন পদ্ধতিতে সমাধান করা যায়।</p>
-                <ul>
-                    <li>ক) সরল সহসমীকরণ কাকে বলে? উদাহরণ দাও। <strong>[২]</strong></li>
-                    <li>খ) উদ্দীপকের প্রথম শর্তানুসারে সংখ্যা দুটি নির্ণয় করো। <strong>[৪]</strong></li>
-                    <li>গ) সংখ্যা দুটির সাথে যথাক্রমে ৪ ও ২ যোগ করলে নতুন সংখ্যা দুটির অনুপাত ২:১ হয়—অপনয়ন পদ্ধতির সাহায্যে তা যাচাই করো। <strong>[৪]</strong></li>
-                </ul>
-            </div>
+  <div class="q">
+    <h3><span>1. Fill in the blanks with suitable words from the box.</span><span>0.5 × 10 = 5</span></h3>
+    <table class="box"><tr><td>a</td><td>gives</td><td>to</td><td>without</td><td>for</td></tr>
+    <tr><td>because</td><td>of</td><td>with</td><td>some</td><td>form</td></tr></table>
+    <p>Reading is (a) —— good habit. It enriches our mind and (b) —— us pleasure. A book is a true friend (c) —— everyone. One cannot be truly educated (d) —— reading books. (e) —— students, reading is especially important (f) —— it widens their knowledge. Books carry the wisdom (g) —— many ages. They teach us how to live (h) —— honesty and courage. We should therefore spend (i) —— part of our time on books every day and (j) —— the habit early.</p>
+  </div>
 
-            <!-- English 2nd Section -->
-            <div class="question-section" style="margin-bottom: 20px;">
-                <h3>২. English Second Paper (Right Form of Verbs) - মান: ৫</h3>
-                <p><strong>Fill in the blanks with the correct form of the verbs given in the brackets: [1 × 5 = 5]</strong></p>
-                <p>
-                    Most of the students of our country are expert in (a) — (memorise) answers. They do not prepare notes by themselves. They get them (b) — (prepare) by their tutors. Their tutors exercise their brains for the students. So, the thinking power of the students does not (c) — (develop). They (d) — (acquire) any command of the language. They, of course, can do well in the examination. But for this, they can claim no credit of their own. This result doesn't (e) — (help) them in their later future.
-                </p>
-            </div>
+  <div class="q">
+    <h3><span>2. Make five sentences from this substitution table.</span><span>1 × 5 = 5</span></h3>
+    <table class="box">
+      <tr><td>Time</td><td>should</td><td>regret it later in life.</td></tr>
+      <tr><td>It</td><td>will</td><td>waste it in idle gossip.</td></tr>
+      <tr><td>A wise student</td><td>is</td><td>make the best use of every moment.</td></tr>
+      <tr><td>Those who waste it</td><td>cannot</td><td>be bought back once it is lost.</td></tr>
+      <tr><td>We</td><td>does not</td><td>more valuable than money.</td></tr>
+    </table>
+  </div>
 
-            <!-- Bangla 1st Section -->
-            <div class="question-section" style="margin-bottom: 20px;">
-                <h3>৩. বাংলা ১ম পত্র (কবিতা: আবার আসিব ফিরে - জীবনানন্দ দাশ) - মান: ১০</h3>
-                <p><strong>সৃজনশীল প্রশ্ন:</strong></p>
-                <p>প্রবাসীর মনে বারবার ভেসে ওঠে চেনা বাংলার রূপ। হাজার মাইল দূরে থেকেও সে অনুভব করে ধানসিঁড়ি নদীর বাঁক, কার্তিকের নবান্নের খেত, আর ভোরের কুয়াশায় মিশে থাকা শঙ্খচিল বা শালিকের রূপ। সে বিশ্বাস করে, মৃত্যুর পরেও তার আত্মা এই বাংলার সবুজ প্রকৃতি ও রূপময় নিসর্গের মাঝেই বারবার ফিরে আসবে।</p>
-                <ul>
-                    <li>ক) ‘আবার আসিব ফিরে’ কবিতাটি কোন কাব্যগ্রন্থ থেকে সংগৃহীত হয়েছে? <strong>[১]</strong></li>
-                    <li>খ) “আবার আসিব আমি বাংলার নদী মাঠ খেত ভালোবেসে”—চরণটি দ্বারা কবির কোন ভাব প্রকাশ পেয়েছে? ব্যাখ্যা করো। <strong>[২]</strong></li>
-                    <li>গ) উদ্দীপকের প্রবাসীর মনোভাবে ‘আবার আসিব ফিরে’ কবিতার যে দিকটি প্রতিফলিত হয়েছে, তা ব্যাখ্যা করো। <strong>[৩]</strong></li>
-                    <li>ঘ) “জন্মভূমির প্রতি গভীর মমত্ববোধ ও প্রকৃতিপ্রীতিই এই কবিতার মূল সুর”—উদ্দীপক ও কবিতার আলোকে মূল্যায়ন করো। <strong>[৪]</strong></li>
-                </ul>
-            </div>
+  <div class="q">
+    <h3><span>3. Complete the following text with suitable verbs in the box with their right form.</span><span>1 × 5 = 5</span></h3>
+    <table class="box"><tr><td>celebrate</td><td>sacrifice</td><td>hold</td><td>remember</td><td>inspire</td></tr></table>
+    <p>Every year on 21 February we (a) —— the International Mother Language Day. In 1952, many brave sons of the soil (b) —— their lives for Bangla. We (c) —— them with deep respect. A book fair (d) —— in the month of February to honour our language. The courage of the martyrs still (e) —— us to love our mother tongue.</p>
+  </div>
 
-            <!-- Bangla 2nd Section -->
-            <div class="question-section" style="margin-bottom: 20px;">
-                <h3>৪. বাংলা ২য় পত্র (পাঠ ৭.১ ও ৭.২) - মান: ৫</h3>
-                <p><strong>বহুনির্বাচনি প্রশ্ন (সঠিক উত্তর নির্বাচন করো): [১ × ৫ = ৫]</strong></p>
-                <ol>
-                    <li>বাক্যের কতটি গুণ বা বৈশিষ্ট্য থাকা আবশ্যক?<br>
-                        ক) ১টি খ) ২টি গ) ৩টি ঘ) ৪টি
-                    </li>
-                    <li>অর্থসংগতির দিক থেকে বাক্যের অন্তর্গত পদগুলোর মধ্যে মিলবন্ধনকে কী বলে?<br>
-                        ক) আকাঙ্ক্ষা খ) আসত্তি গ) যোগ্যতা ঘ) পদক্রম
-                    </li>
-                    <li>একটি পদের পর অন্য পদ শোনার যে ইচ্ছা তাকে কী বলে?<br>
-                        ক) আকাঙ্ক্ষা খ) আসত্তি গ) যোগ্যতা ঘ) কারক
-                    </li>
-                    <li>বাক্যের অর্থ পরিষ্কার করার জন্য সুশৃঙ্খল পদবিন্যাসকে কী বলে?<br>
-                        ক) আকাঙ্ক্ষা খ) আসত্তি গ) যোগ্যতা ঘ) সমাস
-                    </li>
-                    <li>গঠন অনুসারে বাক্য কয় প্রকার?<br>
-                        ক) দুই প্রকার খ) তিন প্রকার গ) চার প্রকার ঘ) পাঁচ প্রকার
-                    </li>
-                </ol>
-            </div>
+  <div class="q">
+    <h3><span>4. Change the following passage into indirect speech.</span><span>5</span></h3>
+    <p>Rina said to her friend, "Why are you looking so sad today?" "I have lost my pen," replied Mita. "Don't worry. I shall lend you mine," said Rina. "Thank you so much. You are really kind!" Mita said.</p>
+  </div>
 
-            <!-- Islam Education Section -->
-            <div class="question-section" style="margin-bottom: 20px;">
-                <h3>৫. ইসলাম শিক্ষা (চতুর্থ অধ্যায়: আখলাক) - মান: ১০</h3>
-                <p><strong>সৃজনশীল প্রশ্ন:</strong></p>
-                <p>জনাব রায়হান একটি প্রতিষ্ঠানে উচ্চ পদে চাকরি করেন। তিনি সবসময় নিজেকে অন্যদের চেয়ে শ্রেষ্ঠ মনে করেন এবং অধস্তন কর্মচারীদের তুচ্ছতাচ্ছিল্য করেন। অন্যদিকে, তার দপ্তরে ফাইল অনুমোদনের জন্য লোকজন এলে তিনি নিয়মের বাইরে অতিরিক্ত গোপন পারিতোষিক বা উৎকোচ দাবি করেন। তার এই আচার-আচরণ সমাজে চরম অসন্তোষ ও বিশৃঙ্খলার সৃষ্টি করছে।</p>
-                <ul>
-                    <li>ক) আখলাক শব্দের অর্থ কী? <strong>[১]</strong></li>
-                    <li>খ) অহংকার কেন জান্নাতে প্রবেশের অন্তরায়? ব্যাখ্যা করো। <strong>[২]</strong></li>
-                    <li>গ) উদ্দীপকে জনাব রায়হানের আচরণের মাধ্যমে আখলাকে যামিমাহর কোন দিকগুলো প্রকাশ পেয়েছে? ব্যাখ্যা করো। <strong>[৩]</strong></li>
-                    <li>ঘ) “আখলাকে যামিমাহ মানুষের ইহকাল ও পরকাল উভয়কেই ধ্বংস করে দেয়”—উদ্দীপকের আলোকে মূল্যায়ন করো। <strong>[৪]</strong></li>
-                </ul>
-            </div>
-        </section>
+  <div class="q">
+    <h3><span>5. Change the following sentences as directed in brackets.</span><span>1 × 5 = 5</span></h3>
+    <p>The internet has changed our life. (a) <u>It is the most useful invention of the modern age.</u> (Comparative) (b) <u>Students use it for collecting information.</u> (Passive) (c) <u>Who does not like to surf the net?</u> (Affirmative) (d) <u>How wonderful the internet is!</u> (Assertive) (e) <u>We should not spend too much time online.</u> (Imperative)</p>
+  </div>
 
-    </div>
+  <div class="q">
+    <h3><span>6. Rewrite the following passage using capitalization and punctuation.</span><span>5</span></h3>
+    <p>the old man looked at the boy and asked what is your name my son my name is rafi sir replied the boy where do you live asked the old man i live in chattogram he said i study in class eight</p>
+  </div>
+
+  <div class="part"><span>Part-B : Writing</span><span>[Marks : 20]</span></div>
+
+  <div class="q">
+    <h3><span>7. Suppose, you are Tanvir/Tanvira. The Ekushey Book Fair is going on and you want to buy some books from there. Now, write an e-mail to your father requesting him to send you some money. The e-mail can be sent to father_rahman@gmail.com.</span><span>8</span></h3>
+    <p>In your e-mail you should include –</p>
+    <ul class="hint"><li>a subject line</li><li>salutation / greetings</li><li>the books you want to buy and why</li><li>the amount of money you need</li><li>a closing mark and your name</li></ul>
+  </div>
+
+  <div class="q">
+    <h3><span>8. Write a composition on "Uses and Abuses of the Internet" in 250 words.</span><span>12</span></h3>
+  </div>
+</div>
+
+<script>
+var left=7200,run=false,id=null;
+function fmt(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),c=s%60;return [h,m,c].map(function(x){return String(x).padStart(2,'0')}).join(':')}
+function toggle(){
+  var b=document.getElementById('tbtn');
+  if(run){clearInterval(id);run=false;b.textContent='▶ চালু করুন';return}
+  run=true;b.textContent='⏸ থামান';
+  id=setInterval(function(){left--;document.getElementById('timer').textContent='⏱ '+fmt(Math.max(left,0));
+    if(left<=0){clearInterval(id);document.getElementById('timer').textContent='⏱ সময় শেষ!'}},1000);
+}
+</script>
 </body>
 </html>
