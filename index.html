@@ -140,5 +140,84 @@ draw();$("b").textContent="▶ শুরু";
 ["copy","cut","contextmenu","selectstart","dragstart"].forEach(function(e){document.addEventListener(e,function(x){x.preventDefault()})});
 document.addEventListener("keydown",function(e){var k=(e.key||"").toLowerCase();if(((e.ctrlKey||e.metaKey)&&"cxasu".indexOf(k)>-1)||k=="f12")e.preventDefault()});
 </script>
+<!-- ===== EXAM GUARD: আপনার HTML ফাইলের শেষে </body> এর ঠিক আগে (আগের </script> এর পরে) পেস্ট করুন ===== -->
+<script>
+(function(){
+var MAX=3; /* সর্বোচ্চ কতবার সতর্কতা, এরপর স্থায়ী লক */
+var started=false,locked=false,dead=false,viol=0;
+var nm=(document.querySelector('.nm span')||{}).textContent||'';
+
+/* ---------- স্টাইল ---------- */
+var css=document.createElement('style');
+css.textContent=
+'body:not(.go) .paper,body.lk .paper{visibility:hidden}'+
+'.ov{position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:#000;color:#fff;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;font-size:18px}'+
+'body:not(.go) #gate,body.lk #lk{display:flex}'+
+'.ov button{font:inherit;font-size:18px;padding:8px 34px;border:0;background:#fff;color:#000;cursor:pointer;border-radius:4px}'+
+'#wm{position:fixed;top:0;left:0;right:0;bottom:0;z-index:50;pointer-events:none}'+
+'@media print{body{display:none!important}}';
+document.head.appendChild(css);
+
+/* ---------- ওয়াটারমার্ক (স্ক্রিনশট/ছবি তুললে নাম দেখা যাবে) ---------- */
+var svg="<svg xmlns='http://www.w3.org/2000/svg' width='220' height='140'><text x='20' y='80' font-size='20' fill='rgba(0,0,0,0.1)' transform='rotate(-25 110 70)'>"+nm+"</text></svg>";
+document.body.insertAdjacentHTML('beforeend',
+'<div id="wm" style="background:url(\'data:image/svg+xml,'+encodeURIComponent(svg)+'\')"></div>'+
+'<div class="ov" id="gate"><div>তুমি কি পরীক্ষা শুরু করতে চাও?</div><div id="gm" style="font-size:14px;color:#f99"></div><button id="gs">শুরু করো</button></div>'+
+'<div class="ov" id="lk"><div style="font-size:22px">⚠ পরীক্ষা লক হয়েছে</div><div id="lm"></div><button id="lr">আবার চালু করো</button></div>');
+
+/* ---------- হেল্পার ---------- */
+function fsEl(){return document.fullscreenElement||document.webkitFullscreenElement}
+function canFS(){var d=document.documentElement;return !!(d.requestFullscreen||d.webkitRequestFullscreen)}
+function reqFS(){var d=document.documentElement,p;try{p=(d.requestFullscreen||d.webkitRequestFullscreen).call(d)}catch(e){}return Promise.resolve(p).catch(function(){})}
+function sizeOK(){
+ var a=Math.max(innerWidth,innerHeight),b=Math.min(innerWidth,innerHeight),
+     A=Math.max(screen.width,screen.height),B=Math.min(screen.width,screen.height);
+ return a>=A*.7&&b>=B*.7;
+}
+function ok(){return (!canFS()||!!fsEl())&&sizeOK()}
+
+function lock(why){
+ if(!started||locked||dead)return;
+ locked=true;viol++;
+ document.body.classList.add('lk');
+ if(viol>=MAX){dead=true;document.getElementById('lr').style.display='none';
+  document.getElementById('lm').textContent='সতর্কতার সীমা পার হয়েছে। শিক্ষককে জানাও।';}
+ else document.getElementById('lm').textContent=m(why+' — সতর্কতা '+viol+'/'+MAX);
+}
+
+/* ---------- শুরু করো ---------- */
+document.getElementById('gs').onclick=function(){
+ reqFS().then(function(){setTimeout(function(){
+  if(!ok()){document.getElementById('gm').textContent='ফ্লোটিং/স্প্লিট-স্ক্রিন বা ছোট উইন্ডো পাওয়া গেছে। সব ফ্লোটিং অ্যাপ/উইন্ডো বন্ধ করে আবার চেষ্টা করো।';return}
+  document.getElementById('gm').textContent='';
+  started=true;document.body.classList.add('go');
+  document.getElementById('b').style.display='none'; /* পজ বাটন লুকানো */
+  tg();
+ },500)});
+};
+
+/* ---------- আবার চালু ---------- */
+document.getElementById('lr').onclick=function(){
+ reqFS().then(function(){setTimeout(function(){
+  if(ok()){locked=false;document.body.classList.remove('lk')}
+  else document.getElementById('lm').textContent+=' (ফুলস্ক্রিন/পূর্ণ স্ক্রিন দরকার)';
+ },500)});
+};
+
+/* ---------- নজরদারি ---------- */
+document.addEventListener('visibilitychange',function(){if(document.hidden)lock('অন্য ট্যাব/অ্যাপে যাওয়া হয়েছে')});
+addEventListener('blur',function(){lock('পরীক্ষার পেজ থেকে ফোকাস সরেছে')});
+addEventListener('pagehide',function(){lock('পেজ ছেড়ে যাওয়া হয়েছে')});
+addEventListener('beforeprint',function(){lock('প্রিন্ট/সেভ চেষ্টা')});
+var rt;function chk(){clearTimeout(rt);rt=setTimeout(function(){if(started&&!locked&&!ok())lock('স্ক্রিন সাইজ বা ফুলস্ক্রিন বদলেছে')},500)}
+addEventListener('resize',chk);
+document.addEventListener('fullscreenchange',chk);
+document.addEventListener('webkitfullscreenchange',chk);
+['pointerdown','pointermove'].forEach(function(ev){
+ document.addEventListener(ev,function(e){if(e.pointerType==='pen')lock('স্টাইলাস/পেন ব্যবহার')},true)});
+document.addEventListener('keyup',function(e){
+ if(e.key==='PrintScreen'){try{navigator.clipboard.writeText('')}catch(x){}lock('স্ক্রিনশট চেষ্টা')}});
+})();
+</script>
 </body>
 </html>
